@@ -7,14 +7,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class OrdenacaoStringTest {
-
-	private final Logger LOGGER = Logger.getLogger(OrdenacaoStringTest.class);
 
 	private static List<String> palavras = new ArrayList<>();
 
