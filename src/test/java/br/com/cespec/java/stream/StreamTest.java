@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 import org.junit.Before;
@@ -59,7 +60,18 @@ public class StreamTest {
 			.filter(c -> c.getAlunos() < 100)
 			.collect(Collectors.toMap(c -> c.getNome(), c -> c.getAlunos()));
 
+		assertEquals(2, lCursos.size());
 		assertEquals(Integer.valueOf(45), lCursos.get("Python"));
 		assertEquals(Integer.valueOf(55), lCursos.get("C"));
+	}
+
+	@Test
+	public void deveCalcularMediaDeAlunosDeTodosOsCursos() {
+
+		OptionalDouble lMedia = cursos.stream()
+			.mapToInt(Curso::getAlunos)
+			.average();
+
+		assertEquals(Double.valueOf(90.75), Double.valueOf(lMedia.getAsDouble()));
 	}
 }
