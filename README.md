@@ -7,50 +7,26 @@
 
 #Java SE 8
 
-A idéia destes projeto é exemplificar a utilização de alguns recursos do java SE 8
-
-#Foreach utilizando expressões lambda
+A idéia destes projeto é exemplificar a utilização de alguns recursos do java SE 8.
 
 Foram implementados alguns cenários de teste com o intuito de exemplificar as diversas formas de iterar uma lista com foreach utilizando expressões **lambda**:
 
 -------------------------------------------------------------------------------
-
 Execute a classe de teste no diretório "src/test/java/**/foreach/ForeachTest.java"
 
-A seguir a descrição dos testes implementados:
+-------------------------------------------------------------------------------
+Foram implementados alguns cenários de teste com o intuito de exemplificar as diversas formas de ordenar uma lista com foreach utilizando expressões **lambda**:
 
-> *Itera a lista de usuários usando foreach padrão
-```
-	@Test
-	public void deveIterarListaDeUsuariosUsandoForeachVersoesAnteriores();
-```
-> *Itera a lista de usuários usando uma implementação de consumer
-```
-	@Test
-	public void deveIterarListaDeUsuariosUsandoImplementacaoUsuarioConsumer();
-```
-> *Itera a lista de usuários usando classes anônimas
-```
-	@Test
-	public void deveIterarListaDeUsuariosUsandoClasseAnonima();
-```
-> *Itera a lista de usuários usando expressão lambda com apenas uma linha
-```
-	@Test
-	public void deveIterarListaUsandoExpressaoLambdaEmUmaLinha();
-```
-> * Itera a lista de usuários usando expressão lambda com diversas linhas
-```
-	@Test
-	public void deveIterarListaDeUsuariosUsandoExpressaoLambdaComVariasLinhas();
-```
-> * Itera a lista de usuários passando uma expressão lambda por parâmetro
-```
-	@Test
-	public void deveIterarListaDeUsuariosUsandoExpressaoLambdaDiretoNoParametro();
-```
-> * Mostra como alterar propriedade status de todos os usuários da lista através utilizando expressões lambda
-```
-	@Test
-	public void deveAlterarOStatusDeTodosOsUsuariosDaListaParaTrue();
-```
+Execute a classe de teste no diretório "src/test/java/**/ordenacao/OrdenacaoStringTest.java"
+
+-------------------------------------------------------------------------------
+Foram implementados alguns cenários de teste com o intuito de exemplificar as diversas formas de iteração em uma lista  através do Stream utilizando expressões **lambda** e **method reference**:
+
+Execute a classe de teste no diretório "src/test/java/**/stream/StreamTest.java"
+
+-------------------------------------------------------------------------------
+Foram implementados alguns cenários de teste com o intuito de exemplificar utilização de recursos da nova API de manipulação de data:
+
+Execute a classe de teste no diretório "src/test/java/**/data/DataTest.java"
+
+
