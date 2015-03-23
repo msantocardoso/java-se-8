@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -41,13 +42,14 @@ public class StreamTest {
 	}
 
 	@Test
-	public void deveOrdenarListaPelaQuantidadeDeAlunos() {
+	public void deveRetornarListaComDoisCursosQuemContemMaisDeCemAlunos() {
 
-		cursos.sort(Comparator.comparing(Curso::getAlunos));
+		List<String> lNomeCursos = cursos.stream()
+			.filter(c->c.getAlunos() > 100)
+			.map(Curso::getNome)
+			.collect(Collectors.toList());
 
-		assertEquals("Python", cursos.get(0).getNome());
-		assertEquals("C", cursos.get(1).getNome());
-		assertEquals("Java 8", cursos.get(2).getNome());
-		assertEquals("JavaScript", cursos.get(3).getNome());
+		assertEquals("JavaScript", lNomeCursos.get(0));
+		assertEquals("Java 8", lNomeCursos.get(1));
 	}
 }
