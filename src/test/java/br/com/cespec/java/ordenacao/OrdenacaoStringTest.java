@@ -19,8 +19,8 @@ public class OrdenacaoStringTest {
 
 	@Before
 	public void before() {
-		palavras.add("texto bem maior");
 		palavras.add("texto medio");
+		palavras.add("texto bem maior");
 		palavras.add("texto");
 
 		LOGGER.info(palavras);
@@ -32,7 +32,7 @@ public class OrdenacaoStringTest {
 	}
 
 	@Test
-	public void deveOrdenarListaPorTamanhoDaStringUsandoSintaxJava7() {
+	public void deveOrdenarListaPorTamanhoDaStringDoMenorParaMaiorUsandoSintaxJava7() {
 
 		Collections.sort(palavras, new ComparadorDoMenorParaMaior());
 
@@ -44,12 +44,22 @@ public class OrdenacaoStringTest {
 	}
 
 	@Test
-	public void deveOrdenarListaPorTamanhoDaStringUsandoSintaxJava8() {
+	public void deveOrdenarListaPorTamanhoDaStringDoMenorParaMaiorUsandoSintaxJava8() {
 
 		palavras.sort(new ComparadorDoMenorParaMaior());
 
 		assertEquals("texto", palavras.get(0));
 		assertEquals("texto medio", palavras.get(1));
 		assertEquals("texto bem maior", palavras.get(2));
+	}
+
+	@Test
+	public void deveOrdenarListaPorTamanhoDaStringDoMaiorParaMenorUsandoSintaxJava8() {
+
+		palavras.sort(new ComparadorDoMaiorParaMenor());
+
+		assertEquals("texto bem maior", palavras.get(0));
+		assertEquals("texto medio", palavras.get(1));
+		assertEquals("texto", palavras.get(2));
 	}
 }
