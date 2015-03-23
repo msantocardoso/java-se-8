@@ -3,8 +3,8 @@ package br.com.cespec.java.stream;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Stream;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,8 +25,29 @@ public class StreamTest {
 
 	@Test
 	public void deveEncontrarDoisCursosComMenosDeCemAlunos() {
-		Stream<Curso> lCursos = cursos.stream().filter(c -> c.getAlunos() < 100);
 
-		assertEquals(2, lCursos.count());
+		assertEquals(2, cursos.stream().filter(c -> c.getAlunos() < 100).count());
+	}
+
+	@Test
+	public void deveSomarTotalDeAlunosDosCursosComMaisDeCemAlunos() {
+
+		int lTotal = cursos.stream()
+						.filter(c->c.getAlunos() > 100)
+						.mapToInt(Curso::getAlunos)
+						.sum();
+
+		assertEquals(263, lTotal);
+	}
+
+	@Test
+	public void deveOrdenarListaPelaQuantidadeDeAlunos() {
+
+		cursos.sort(Comparator.comparing(Curso::getAlunos));
+
+		assertEquals("Python", cursos.get(0).getNome());
+		assertEquals("C", cursos.get(1).getNome());
+		assertEquals("Java 8", cursos.get(2).getNome());
+		assertEquals("JavaScript", cursos.get(3).getNome());
 	}
 }
