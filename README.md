@@ -9,23 +9,23 @@
 
 A idéia destes projeto é exemplificar a utilização de alguns recursos do java SE 8.
 
-Foram implementados alguns cenários de teste com o intuito de exemplificar as diversas formas de iterar uma lista com foreach utilizando expressões **lambda**:
+Iterar uma lista com foreach utilizando expressões **lambda**:
 
 -------------------------------------------------------------------------------
 Execute a classe de teste no diretório "src/test/java/**/foreach/ForeachTest.java"
 
 -------------------------------------------------------------------------------
-Foram implementados alguns cenários de teste com o intuito de exemplificar as diversas formas de ordenar uma lista com foreach utilizando expressões **lambda**:
+Ordenar uma lista utilizando expressões **lambda**:
 
 Execute a classe de teste no diretório "src/test/java/**/ordenacao/OrdenacaoStringTest.java"
 
 -------------------------------------------------------------------------------
-Foram implementados alguns cenários de teste com o intuito de exemplificar as diversas formas de iteração em uma lista  através do Stream utilizando expressões **lambda** e **method reference**:
+Iteração em uma lista utilizando Stream **lambda** e **method reference**:
 
 Execute a classe de teste no diretório "src/test/java/**/stream/StreamTest.java"
 
 -------------------------------------------------------------------------------
-Foram implementados alguns cenários de teste com o intuito de exemplificar utilização de recursos da nova API de manipulação de data:
+Utilização de recursos da nova API de manipulação de data:
 
 Execute a classe de teste no diretório "src/test/java/**/data/DataTest.java"
 
