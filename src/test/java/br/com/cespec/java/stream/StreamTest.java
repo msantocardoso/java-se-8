@@ -3,8 +3,8 @@ package br.com.cespec.java.stream;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.junit.Before;
@@ -51,5 +51,15 @@ public class StreamTest {
 
 		assertEquals("JavaScript", lNomeCursos.get(0));
 		assertEquals("Java 8", lNomeCursos.get(1));
+	}
+
+	@Test
+	public void deveRetornarMapaComDoisCursosQuemContemMenosDeCemAlunos() {
+		Map<String, Integer> lCursos = cursos.stream()
+			.filter(c -> c.getAlunos() < 100)
+			.collect(Collectors.toMap(c -> c.getNome(), c -> c.getAlunos()));
+
+		assertEquals(Integer.valueOf(45), lCursos.get("Python"));
+		assertEquals(Integer.valueOf(55), lCursos.get("C"));
 	}
 }
