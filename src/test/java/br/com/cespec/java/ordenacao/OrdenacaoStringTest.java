@@ -62,4 +62,16 @@ public class OrdenacaoStringTest {
 
 		LOGGER.info(palavras);
 	}
+
+	@Test
+	public void deveOrdenarListaPeloTamanhoDaStringDoMenorParaMaiorUsandoLambdaJava8() {
+
+		palavras.sort((textoI, textoII) -> Integer.compare(textoI.length(), textoII.length()));
+
+		assertEquals("texto", palavras.get(0));
+		assertEquals("texto medio", palavras.get(1));
+		assertEquals("texto bem maior", palavras.get(2));
+
+		LOGGER.info(palavras);
+	}
 }
