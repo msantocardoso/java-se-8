@@ -22,8 +22,6 @@ public class OrdenacaoStringTest {
 		palavras.add("texto medio");
 		palavras.add("texto bem maior");
 		palavras.add("texto");
-
-		LOGGER.info(palavras);
 	}
 
 	@After
@@ -39,8 +37,6 @@ public class OrdenacaoStringTest {
 		assertEquals("texto", palavras.get(0));
 		assertEquals("texto medio", palavras.get(1));
 		assertEquals("texto bem maior", palavras.get(2));
-
-		LOGGER.info(palavras);
 	}
 
 	@Test
@@ -51,6 +47,8 @@ public class OrdenacaoStringTest {
 		assertEquals("texto", palavras.get(0));
 		assertEquals("texto medio", palavras.get(1));
 		assertEquals("texto bem maior", palavras.get(2));
+
+		LOGGER.info(palavras);
 	}
 
 	@Test
@@ -61,5 +59,7 @@ public class OrdenacaoStringTest {
 		assertEquals("texto bem maior", palavras.get(0));
 		assertEquals("texto medio", palavras.get(1));
 		assertEquals("texto", palavras.get(2));
+
+		LOGGER.info(palavras);
 	}
 }
