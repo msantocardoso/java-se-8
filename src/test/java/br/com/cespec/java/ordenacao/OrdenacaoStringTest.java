@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -47,8 +48,6 @@ public class OrdenacaoStringTest {
 		assertEquals("texto", palavras.get(0));
 		assertEquals("texto medio", palavras.get(1));
 		assertEquals("texto bem maior", palavras.get(2));
-
-		LOGGER.info(palavras);
 	}
 
 	@Test
@@ -59,8 +58,6 @@ public class OrdenacaoStringTest {
 		assertEquals("texto bem maior", palavras.get(0));
 		assertEquals("texto medio", palavras.get(1));
 		assertEquals("texto", palavras.get(2));
-
-		LOGGER.info(palavras);
 	}
 
 	@Test
@@ -71,8 +68,6 @@ public class OrdenacaoStringTest {
 		assertEquals("texto", palavras.get(0));
 		assertEquals("texto medio", palavras.get(1));
 		assertEquals("texto bem maior", palavras.get(2));
-
-		LOGGER.info(palavras);
 	}
 
 	@Test
@@ -89,7 +84,15 @@ public class OrdenacaoStringTest {
 		assertEquals("texto bem maior", palavras.get(0));
 		assertEquals("texto medio", palavras.get(1));
 		assertEquals("texto", palavras.get(2));
+	}
 
-		LOGGER.info(palavras);
+	@Test
+	public void deveOrdenarListaPeloTamanhoDaStringDoMenorParaMaiorUsandoLambdaComMethodReference() {
+
+		palavras.sort(Comparator.comparing(String::length));
+
+		assertEquals("texto", palavras.get(0));
+		assertEquals("texto medio", palavras.get(1));
+		assertEquals("texto bem maior", palavras.get(2));
 	}
 }
