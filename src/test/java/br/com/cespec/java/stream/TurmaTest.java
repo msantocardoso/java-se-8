@@ -1,6 +1,7 @@
 package br.com.cespec.java.stream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
@@ -79,4 +80,25 @@ public class TurmaTest {
 		assertEquals(Double.valueOf(27.9), total.get());
 	}
 
+	@Test
+	public void deveJuntarTodasAsTurmas() {
+		Turma matutino = new Turma();
+
+		matutino.adicionar(new Aluno("A", Sexo.FEMININO, 5.5));
+		matutino.adicionar(new Aluno("B", Sexo.MASCULINO, 6.0));
+		matutino.adicionar(new Aluno("C", Sexo.FEMININO, 4.4));
+		matutino.adicionar(new Aluno("D", Sexo.MASCULINO, 8.3));
+		matutino.adicionar(new Aluno("E", Sexo.FEMININO, 6.2));
+
+		Turma vespertino = new Turma();
+		vespertino.adicionar(new Aluno("F", Sexo.MASCULINO, 8.5));
+		vespertino.adicionar(new Aluno("G", Sexo.MASCULINO, 9.0));
+		vespertino.adicionar(new Aluno("H", Sexo.FEMININO, 8.5));
+		vespertino.adicionar(new Aluno("I", Sexo.FEMININO, 8.3));
+		vespertino.adicionar(new Aluno("J", Sexo.FEMININO, 8.7));
+
+		TurmaSumarizadora sumarizadora = TurmaSumarizadora.of(matutino, vespertino);
+
+		assertNotNull(sumarizadora);
+	}
 }
