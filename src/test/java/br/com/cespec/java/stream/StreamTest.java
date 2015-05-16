@@ -74,4 +74,16 @@ public class StreamTest {
 
 		assertEquals(Double.valueOf(90.75), Double.valueOf(lMedia.getAsDouble()));
 	}
+
+	@Test
+	public void deveGerarStringPorVIrgula() {
+
+		String turmas = cursos.stream()
+			.filter(nome -> nome != null)
+			.filter(nome -> !"".equals(nome))
+			.map(Curso::getNome)
+			.collect(Collectors.joining(","));
+
+		assertEquals("Python,JavaScript,Java 8,C", turmas);
+	}
 }
